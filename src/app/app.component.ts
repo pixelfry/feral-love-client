@@ -1,14 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { MainComponent } from './components/main/main.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ SidebarComponent, MainComponent ],
+  imports: [ RouterOutlet ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'feral-love';
-  isSidebarCollapsed = signal<boolean>(false);
 }
