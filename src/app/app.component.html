@@ -1,5 +1,8 @@
 <div class="wrapper">
   <div class="main">
-    <router-outlet />
+    <div class="inner">
+      <app-sidebar [isSidebarCollapsed]="isSidebarCollapsed()" />
+      <app-main />
+    </div>
   </div>
 </div>
