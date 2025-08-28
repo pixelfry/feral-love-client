@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Pet } from '../../models/pet';
 
 @Component({
   selector: 'app-landing',
