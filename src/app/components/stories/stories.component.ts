@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { StoriesService } from '../../services/stories.service';
+import { Story } from '../../models/story';
 
 @Component({
   selector: 'app-stories',
@@ -7,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './stories.component.css'
 })
 export class StoriesComponent {
+
+  private storiesService: StoriesService = inject(StoriesService);
+  public stories: Story[] = [];
+
+  ngOnInit() {
+    this.storiesService.getStories().subscribe((stories) => {
+      this.stories = stories;
+    });
+  }
 
 }

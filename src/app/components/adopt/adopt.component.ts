@@ -13,11 +13,7 @@ export class AdoptComponent {
 
 
   private adoptService: AdoptService = inject(AdoptService);
-  private adoptablePets: Pet[] = [];
-
-  consoleLogPets() {
-    console.log(this.adoptablePets);
-  }
+  public adoptablePets: Pet[] = [];
 
   ngOnInit(){
     this.adoptService.getAdoptablePets().subscribe((pets) => {
