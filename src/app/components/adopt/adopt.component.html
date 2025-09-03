@@ -3,6 +3,7 @@
 									<header class="main">
 										<h1>Available Adoptions</h1>
 									</header>
+                  <button (click)="consoleLog()">log</button>
 
 
                <!-- Grid -->
@@ -12,12 +13,12 @@
 							<p>Please note that some animals may not be immediately available due to medical or logistical information. For more information regarding any animal you see, please feel free to contact us.</p>
 							<div class="items style1 medium onscroll-fade-in">
 
-              @for (adoptable of adoptablePets; track adoptable) {
+              @for (adoptable of adoptableAnimals; track adoptable) {
                 <section>
 									<span class="icon style2 major fa-gem"></span>
-                  <h3><a routerLink="/">{{ adoptable.name }}</a></h3>
-                  <p>{{ adoptable.description }}</p>
-                  <p><span>Species: {{ adoptable.species }}<br /></span><span>Breed: {{ adoptable.breed }}<br /></span><span>Age: {{ adoptable.age }}</span></p>
+                  <h3><a routerLink="/">{{ adoptable.animalName }}</a></h3>
+                  <p>{{ adoptable.age }} (months) - {{ adoptable.description }}</p>
+                  <p><span><br /></span><span><br /></span><span>Age: {{ adoptable.age }}</span></p>
 								</section>
               }
 

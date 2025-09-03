@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AdoptService } from '../../services/adopt.service';
-import { Pet } from '../../models/pet';
+import { Animal } from '../../models/animal';
 
 @Component({
   selector: 'app-adopt',
@@ -13,11 +13,15 @@ export class AdoptComponent {
 
 
   private adoptService: AdoptService = inject(AdoptService);
-  public adoptablePets: Pet[] = [];
+  public adoptableAnimals: Animal[] = [];
+
+  consoleLog(){
+    console.log(this.adoptableAnimals);
+  }
 
   ngOnInit(){
-    this.adoptService.getAdoptablePets().subscribe((pets) => {
-      this.adoptablePets = pets;
+    this.adoptService.getAdoptableAnimals().subscribe((animals) => {
+      this.adoptableAnimals = animals;
     });
   }
 }
