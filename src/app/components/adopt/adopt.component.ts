@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AdoptService } from '../../services/adopt.service';
 import { Animal } from '../../models/animal';
+import { MonthsToYearsPipe } from '../../directives/age-pipe';
 
 @Component({
   selector: 'app-adopt',
-  imports: [ RouterLink ],
+  imports: [ RouterLink, MonthsToYearsPipe ],
   templateUrl: './adopt.component.html',
   styleUrl: './adopt.component.css'
 })

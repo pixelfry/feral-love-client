@@ -17,7 +17,7 @@
                 <section>
 									<span class="icon style2 major fa-gem"></span>
                   <h3><a routerLink="/">{{ adoptable.animalName }}</a></h3>
-                  <p>{{ adoptable.age }} (months) - {{ adoptable.description }}</p>
+                  <p>{{ adoptable.age | monthsToYears }} - {{ adoptable.description }}</p>
                   <p><span><br /></span><span><br /></span><span>Age: {{ adoptable.age }}</span></p>
 								</section>
               }
